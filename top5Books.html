@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 5 Books of All Time</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        color: #222;
+        background-color: #fff;
+      }
+
+      a.skip-link {
+        position: absolute;
+        top: -100%;
+        left: 1rem;
+        background: #005fcc;
+        color: #fff;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0 0 6px 6px;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      a.skip-link:focus {
+        top: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      nav ul li a {
+        color: #005fcc;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      nav ul li a:hover,
+      nav ul li a:focus {
+        text-decoration: underline;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        color: #111;
+      }
+
+      ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: book-counter;
+      }
+
+      ol li {
+        counter-increment: book-counter;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      ol li:last-child {
+        border-bottom: none;
+      }
+
+      ol li::before {
+        content: counter(book-counter) ".";
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #005fcc;
+        min-width: 2rem;
+        padding-top: 0.2rem;
+      }
+
+      ol li img {
+        width: 100px;
+        height: 150px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex-shrink: 0;
+        background-color: #f0f0f0;
+      }
+
+      .book-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .book-info strong {
+        font-size: 1.1rem;
+        color: #111;
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      .book-info .author {
+        font-size: 0.9rem;
+        color: #005fcc;
+        margin-bottom: 0.4rem;
+      }
+
+      .book-info .desc {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      footer {
+        margin-top: 2rem;
+        font-size: 0.875rem;
+        color: #555;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
+      }
+
+      footer a {
+        color: #005fcc;
+      }
+
+      @media (max-width: 500px) {
+        ol li {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav aria-label="Jump to book">
+      <ul>
+        <li><a href="#one">Jump to #1</a></li>
+        <li><a href="#two">Jump to #2</a></li>
+        <li><a href="#three">Jump to #3</a></li>
+        <li><a href="#four">Jump to #4</a></li>
+        <li><a href="#five">Jump to #5</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <h1>Top 5 Books of All Time</h1>
+
+      <ol>
+
+        <!-- Open Library cover IDs: /b/isbn/{ISBN}-L.jpg gives a large cover -->
+
+        <li id="one">
+          <img
+            src="https://covers.openlibrary.org/b/isbn/0061935026-L.jpg"
+            alt="Book cover of To Kill a Mockingbird by Harper Lee"
+            width="100"
+            height="150"
+          />
+          <div class="book-info">
+            <strong>To Kill a Mockingbird</strong>
+            <span class="author">Harper Lee &mdash; 1960</span>
+            <span class="desc">A powerful story of racial injustice and moral courage in the American South, told through the eyes of young Scout Finch.</span>
+          </div>
+        </li>
+
+        <li id="two">
+          <img
+            src="https://covers.openlibrary.org/b/isbn/0451524934-L.jpg"
+            alt="Book cover of 1984 by George Orwell"
+            width="100"
+            height="150"
+          />
+          <div class="book-info">
+            <strong>1984</strong>
+            <span class="author">George Orwell &mdash; 1949</span>
+            <span class="desc">A chilling dystopian novel about totalitarianism, surveillance, and the destruction of truth that remains deeply relevant today.</span>
+          </div>
+        </li>
+
+        <li id="three">
+          <img
+            src="https://covers.openlibrary.org/b/isbn/0743273567-L.jpg"
+            alt="Book cover of The Great Gatsby by F. Scott Fitzgerald"
+            width="100"
+            height="150"
+          />
+          <div class="book-info">
+            <strong>The Great Gatsby</strong>
+            <span class="author">F. Scott Fitzgerald &mdash; 1925</span>
+            <span class="desc">A glittering portrait of the Jazz Age and the hollow pursuit of the American Dream through the eyes of narrator Nick Carraway.</span>
+          </div>
+        </li>
+
+        <li id="four">
+          <img
+            src="https://covers.openlibrary.org/b/isbn/0142437239-L.jpg"
+            alt="Book cover of Don Quixote by Miguel de Cervantes"
+            width="100"
+            height="150"
+          />
+          <div class="book-info">
+            <strong>Don Quixote</strong>
+            <span class="author">Miguel de Cervantes &mdash; 1605</span>
+            <span class="desc">Often called the first modern novel, this epic tale of a knight tilting at windmills blends comedy, tragedy, and timeless philosophy.</span>
+          </div>
+        </li>
+
+        <li id="five">
+          <img
+            src="https://covers.openlibrary.org/b/isbn/0743477103-L.jpg"
+            alt="Book cover of Hamlet by William Shakespeare"
+            width="100"
+            height="150"
+          />
+          <div class="book-info">
+            <strong>Hamlet</strong>
+            <span class="author">William Shakespeare &mdash; c. 1600</span>
+            <span class="desc">Shakespeare's greatest tragedy explores revenge, madness, and mortality through Denmark's brooding prince in timeless verse.</span>
+          </div>
+        </li>
+
+      </ol>
+    </main>
+
+    <footer>
+      <p>Source: <a href="https://www.goodreads.com/list/show/1.Best_Books_Ever" target="_blank" rel="noopener noreferrer">Goodreads &mdash; Best Books Ever</a></p>
+    </footer>
+
+  </body>
+</html>
